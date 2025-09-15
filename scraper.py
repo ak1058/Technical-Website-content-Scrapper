@@ -452,9 +452,8 @@ class UniversalWebScraper:
             
         return True
 
-# Usage example
+
 def main():
-    # For testing Substack and other strict sites, bypass robots.txt
     scraper = UniversalWebScraper(delay=0.5, respect_robots=False)
     
     # Test with a sample URL
@@ -464,13 +463,13 @@ def main():
     
     result = scraper.scrape_site(test_url)
     
-    # Convert to required JSON format (full content)
+
     output = {
         "site": result.site,
         "items": [
             {
                 "title": item.title,
-                "content": item.content,  # Full content for JSON file
+                "content": item.content,  
                 "content_type": item.content_type,
                 "source_url": item.source_url
             }
@@ -488,7 +487,7 @@ def main():
     with open(json_filename, 'w', encoding='utf-8') as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     
-    # Save markdown content to separate file
+    # Save markdown content to separate file (just for seeing purpose how it is looks like)
     md_filename = f"scraped_content_{urlparse(test_url).netloc}_{int(time.time())}.md"
     with open(md_filename, 'w', encoding='utf-8') as f:
         f.write(f"# Scraped Content from {result.site}\n\n")
