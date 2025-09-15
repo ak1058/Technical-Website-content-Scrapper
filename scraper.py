@@ -75,7 +75,7 @@ class UniversalWebScraper:
             
             # Step 3: Extract content from each URL
             items = []
-            url_list = list(urls)[:10]  # Convert set to list and limit to 10 for testing
+            url_list = list(urls)[:20]  # Convert set to list and limit to 20 for testingwe can set more number as many as we can
             logger.info(f"Testing first {len(url_list)} URLs: {url_list[:3]}...")
             
             for i, content_url in enumerate(url_list):

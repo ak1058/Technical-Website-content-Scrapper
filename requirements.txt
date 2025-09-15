@@ -3,6 +3,6 @@ beautifulsoup4
 lxml
 markdownify
 html2text
-# fastapi
-# uvicorn
-# aiohttp
+fastapi
+uvicorn
+aiohttp
